@@ -5,17 +5,17 @@
 
 float A, B, C;
 
-const int               width = 80;   
-const int               height = 25;
-float                   cubeWidth = 5;
-std::vector<float>      zBuffer(width* height);
-std::vector<char>       buffer(width* height);
-const int               backgroundASCIICode = '.';
-const int               distanceFromCam = 120;
-float                   horizontalOffset;
-float                   K1 = 40;
+const int width = 80;   
+const int height = 25;
+float cubeWidth = 5;
+std::vector<float> zBuffer(width* height);
+std::vector<char> buffer(width* height);
+const int backgroundASCIICode = ' ';
+const int distanceFromCam = 120;
+float horizontalOffset;
+float K1 = 40;
 
-float                   incrementSpeed = 1.0;
+float incrementSpeed = 1.0;
 
 float x, y, z;
 float ooz;
@@ -62,7 +62,6 @@ int main() {
         std::fill(buffer.begin(), buffer.end(), backgroundASCIICode);
         std::fill(zBuffer.begin(), zBuffer.end(), 0.0f);
         cubeWidth = 20;
-        horizontalOffset = 3 * cubeWidth;  // Dostosuj wartość przesunięcia poziomego
 
         for (float cubeX = -cubeWidth; cubeX < cubeWidth; cubeX += incrementSpeed) {
             for (float cubeY = -cubeWidth; cubeY < cubeWidth;
